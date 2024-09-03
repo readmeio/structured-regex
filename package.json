@@ -1,5 +1,5 @@
 {
-  "name": "typed-regex",
+  "name": "structured-regex",
   "version": "1.0.0",
   "description": "A RegExp wrapper to do named group parsing without using named capture groups",
   "license": "MIT",
