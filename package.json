@@ -1,7 +1,7 @@
 {
   "name": "typed-regex",
   "version": "1.0.0",
-  "description": "Remove undefined properties and empty arrays from an object",
+  "description": "A RegExp wrapper to do named group parsing without using named capture groups",
   "license": "MIT",
   "author": "Jon Ursenbach <jon@ursenba.ch>",
   "sideEffects": false,
