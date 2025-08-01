@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { StructuredRegEx } from '../src/index.js';
 
@@ -33,6 +33,7 @@ describe('StructuredRegEx', () => {
         'json',
       ];
 
+      // biome-ignore lint/style/noNonNullAssertion: this is fine
       expect(Array.from(uri.match(API_URI_REGEX)!)).toStrictEqual(match);
       expect(API_URI_REGEX.test(uri)).toBe(true);
 
