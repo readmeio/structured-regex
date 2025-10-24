@@ -1,6 +1,6 @@
 {
   "name": "structured-regex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A RegExp wrapper to do named group parsing without using named capture groups",
   "license": "MIT",
   "author": "Jon Ursenbach <jon@ursenba.ch>",
