@@ -5,18 +5,25 @@
   "license": "MIT",
   "author": "Jon Ursenbach <jon@ursenba.ch>",
   "sideEffects": false,
+  "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./package.json": "./package.json"
   },
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
   "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "types": "dist/index.d.cts",
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "repository": {
     "type": "git",
@@ -26,7 +33,8 @@
     "url": "https://github.com/readmeio/structured-rege/issues"
   },
   "scripts": {
-    "build": "tsup",
+    "attw": "attw --pack --format ascii",
+    "build": "tsdown",
     "format": "npm run prettier && npx biome check --write",
     "lint": "tsc --noEmit && npx biome check",
     "prebuild": "rm -rf dist/",
@@ -36,13 +44,14 @@
     "test": "vitest run --coverage"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.1.3",
-    "@readme/standards": "^2.1.1",
-    "@vitest/coverage-v8": "^4.0.2",
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@biomejs/biome": "^2.4.10",
+    "@readme/standards": "^2.4.0",
+    "@vitest/coverage-v8": "^4.1.2",
     "prettier": "^3.5.3",
-    "tsup": "^8.5.0",
-    "typescript": "^5.8.3",
-    "vitest": "^4.0.2"
+    "tsdown": "^0.21.7",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.2"
   },
   "prettier": "@readme/standards/prettier"
 }
