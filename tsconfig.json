@@ -1,13 +1,11 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "baseUrl": "./src/",
     "declaration": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "noImplicitAny": true,
     "outDir": "./dist",
-    "skipLibCheck": true,
+    "rootDir": "./src",
     "strict": true,
     "target": "ES2020"
   },

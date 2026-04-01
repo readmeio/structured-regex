@@ -1,8 +1,6 @@
-import type { Options } from 'tsup';
+import { defineConfig } from 'tsdown';
 
-import { defineConfig } from 'tsup';
-
-export default defineConfig((options: Options) => ({
+export default defineConfig(options => ({
   ...options,
 
   cjsInterop: true,
