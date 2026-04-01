@@ -33,7 +33,6 @@
     "url": "https://github.com/readmeio/structured-rege/issues"
   },
   "scripts": {
-    "attw": "attw --pack --format ascii",
     "build": "tsdown",
     "format": "npm run prettier && npx biome check --write",
     "lint": "tsc --noEmit && npx biome check",
@@ -44,7 +43,6 @@
     "test": "vitest run --coverage"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.18.2",
     "@biomejs/biome": "^2.4.10",
     "@readme/standards": "^2.4.0",
     "@vitest/coverage-v8": "^4.1.2",
