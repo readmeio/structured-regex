@@ -2,10 +2,20 @@
   "name": "structured-regex",
   "version": "2.0.0",
   "description": "A RegExp wrapper to do named group parsing without using named capture groups",
+  "bugs": {
+    "url": "https://github.com/readmeio/structured-rege/issues"
+  },
   "license": "MIT",
   "author": "Jon Ursenbach <jon@ursenba.ch>",
-  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/readmeio/structured-regex.git"
+  },
   "type": "module",
+  "sideEffects": false,
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.cts",
   "exports": {
     ".": {
       "import": {
@@ -19,37 +29,25 @@
     },
     "./package.json": "./package.json"
   },
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.cts",
-  "engines": {
-    "node": ">=22"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/readmeio/structured-regex.git"
-  },
-  "bugs": {
-    "url": "https://github.com/readmeio/structured-rege/issues"
-  },
   "scripts": {
     "build": "tsdown",
-    "format": "npm run prettier && npx biome check --write",
-    "lint": "tsc --noEmit && npx biome check",
+    "format": "npx oxlint --fix && npx oxfmt --write",
+    "lint": "tsc --noEmit && npx oxlint && npx oxfmt --check",
     "prebuild": "rm -rf dist/",
     "prepack": "npm run build",
     "pretest": "npm run lint",
-    "prettier": "prettier --list-different --write \"./**/**.{js,ts}\"",
     "test": "vitest run --coverage"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.10",
-    "@readme/standards": "^2.4.0",
+    "@readme/oxlint-config": "^1.1.2",
     "@vitest/coverage-v8": "^4.1.2",
-    "prettier": "^3.5.3",
+    "oxfmt": "^0.47.0",
+    "oxlint": "^1.62.0",
     "tsdown": "^0.21.7",
     "typescript": "^6.0.2",
     "vitest": "^4.1.2"
   },
-  "prettier": "@readme/standards/prettier"
+  "engines": {
+    "node": ">=22"
+  }
 }
